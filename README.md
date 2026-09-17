@@ -1,7 +1,7 @@
 # RxPulse: Multi-Signal Clinical Evidence Instrument
 
-> Built for **Manipal Hackathon 2026 (M# 2026)**
-> **Track:** Healthcare (Good Health and Well-being)
+> Built for **Manipal Hackathon 2026 (M# 2026)**<br>
+> **Track:** Healthcare (Good Health and Well-being)<br>
 > **Problem Statement ID:** P01: The Vanishing Dose: Detecting Medication Non-Adherence Without Asking
 
 ---
@@ -14,7 +14,7 @@ When a patient with high blood pressure or diabetes visits the clinic and their 
 
 Clinicians currently lack visibility into what happens between quarterly clinic visits. A patient may skip pills for weeks and then take them faithfully for 3 to 4 days right before their scheduled appointment (a pattern known as **White-Coat Adherence**). In the clinic, short-term vitals look temporarily improved or standard metrics average the gaps away. 
 
-**Vanishing Dose** exists to separate:
+**RxPulse** exists to separate:
 > **"The drug isn't working"** from **"The drug isn't being taken."**
 
 ---
