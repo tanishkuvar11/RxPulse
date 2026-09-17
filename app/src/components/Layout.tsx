@@ -2,9 +2,10 @@ import { NavLink, Outlet } from "react-router-dom";
 
 const tabs = [
   { to: "/", label: "Home", end: true },
-  { to: "/cohort", label: "Cohort" },
-  { to: "/patient", label: "Patient" },
-  { to: "/instrument", label: "Instrument" },
+  { to: "/simulator", label: "Live Simulator", isDemo: true },
+  { to: "/patient", label: "Patient Profiles" },
+  { to: "/cohort", label: "Cohort Study" },
+  { to: "/instrument", label: "Reliability" },
 ];
 
 export function Layout() {
@@ -16,19 +17,26 @@ export function Layout() {
             <span className="font-semibold tracking-tight">Vanishing Dose</span>
             <span className="hidden text-xs text-subtext sm:inline">a clinical evidence instrument</span>
           </NavLink>
-          <nav className="flex gap-1">
+          <nav className="flex items-center gap-1.5">
             {tabs.map((t) => (
               <NavLink
                 key={t.to}
                 to={t.to}
                 end={t.end}
                 className={({ isActive }) =>
-                  `rounded-md px-3 py-1.5 text-sm transition-colors ${
-                    isActive ? "bg-surface text-text" : "text-subtext hover:text-text"
-                  }`
+                  `rounded-lg px-3 py-1.5 text-xs font-medium transition-all flex items-center gap-1.5 ${
+                    isActive
+                      ? "bg-surface text-text ring-1 ring-hairline shadow-sm"
+                      : "text-subtext hover:text-text hover:bg-surface/50"
+                  } ${t.isDemo ? "border border-amber/40 bg-amber/5 text-amber hover:bg-amber/10" : ""}`
                 }
               >
-                {t.label}
+                <span>{t.label}</span>
+                {t.isDemo && (
+                  <span className="rounded bg-amber px-1.5 py-0.2 text-[9px] font-bold text-ground">
+                    DEMO
+                  </span>
+                )}
               </NavLink>
             ))}
           </nav>

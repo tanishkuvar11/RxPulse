@@ -138,23 +138,23 @@ export default function Hero() {
       {/* Quick Launch Action Buttons */}
       <section className="flex flex-wrap gap-3 pt-2">
         <Link
-          to="/patient"
+          to="/simulator"
           className="rounded-lg border border-amber bg-amber px-5 py-2.5 text-sm font-semibold text-ground hover:bg-amber/90 transition-all shadow-md flex items-center gap-2"
         >
-          <span>Explore Patient Case Studies</span>
+          <span>Launch Live Simulator (Interactive Demo)</span>
           <span>→</span>
+        </Link>
+        <Link
+          to="/patient"
+          className="rounded-lg border border-hairline bg-surface px-5 py-2.5 text-sm font-medium text-text hover:border-amber transition-all"
+        >
+          Explore Real Patient Cases →
         </Link>
         <Link
           to="/cohort"
           className="rounded-lg border border-hairline bg-surface px-5 py-2.5 text-sm font-medium text-text hover:border-amber transition-all"
         >
-          View 6,286 Patient Population Analysis →
-        </Link>
-        <Link
-          to="/instrument"
-          className="rounded-lg border border-hairline bg-surface px-5 py-2.5 text-sm font-medium text-text hover:border-amber transition-all"
-        >
-          Test AI Reliability & Accuracy →
+          View Population Analysis →
         </Link>
       </section>
     </div>
