@@ -1,4 +1,5 @@
 import type { ClinicalAction } from "../lib/types";
+import { ProvenanceTag } from "./Provenance";
 
 export function ClinicalActionBanner({
   action,
@@ -45,8 +46,9 @@ export function ClinicalActionBanner({
             {cleanBadge}
           </span>
         </div>
-        <span className="text-xs text-subtext font-mono">
+        <span className="flex items-center text-xs text-subtext font-mono">
           Clinical Guidance for: {ingredient.toUpperCase()}
+          <ProvenanceTag kind="simulated" formula="Rule-based guidance text generated from this patient's real refill-lift and abstention values, combined with a physiologically modeled (not real) wearable/vitals narrative. Illustrative decision-support copy, not a clinical determination." />
         </span>
       </div>
 

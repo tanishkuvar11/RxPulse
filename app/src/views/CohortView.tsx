@@ -111,7 +111,7 @@ export default function CohortView() {
           </div>
           <div className="rounded border border-hairline/60 bg-ground/60 p-3">
             <strong className="text-text block mb-1">3. The Detector Works</strong>
-            Click the "Simulated Real-World Surge Benchmark" toggle above or visit the <strong>Instrument</strong> page to see our detector catch real surges with over 95% accuracy.
+            Click the "Simulated Real-World Surge Benchmark" toggle above to see a synthetic example with an injected surge, or visit the <strong>Instrument</strong> page for the real validation result: 80%+ statistical power once the pre-visit effect exceeds about 1.3 percentage points.
           </div>
         </div>
       </section>

@@ -29,12 +29,12 @@ export default function InstrumentView() {
         <div className="flex items-center justify-between">
           <h2 className="text-base font-semibold text-text flex items-center gap-2">
             <span className="flex h-2.5 w-2.5 rounded-full bg-amber" />
-            Test 1: Can the system catch real medication surges? (Detection Accuracy)
+            Test 1: Can the system catch real medication surges? (Statistical Power)
           </h2>
-          <ProvenanceTag kind="simulated" formula="Percentage of 40 simulated trial patient groups (200 patients each) that successfully detect the surge across different noise levels." />
+          <ProvenanceTag kind="simulated" formula="Fraction of 40 simulated trial patient groups (200 patients each) for which the permutation test reaches p<0.05, across different noise levels." />
         </div>
         <p className="max-w-3xl text-xs text-subtext leading-relaxed">
-          If a patient group truly takes their medicine only right before appointments, can our algorithm find that pattern? We tested this on simulated trials. As shown below, detection accuracy quickly reaches 80% to 100% even when the pre-visit increase is just 1.3 percentage points.
+          If a patient group truly takes their medicine only right before appointments, can our algorithm find that pattern? We tested this on simulated trials, not real data. As shown below, statistical power quickly reaches 80% to 100% once the injected pre-visit effect exceeds about 1.3 percentage points.
         </p>
         {instrument.data?.power_curve && (
           <div className="rounded-xl border border-hairline bg-surface p-4 mt-2">
@@ -70,7 +70,8 @@ export default function InstrumentView() {
               realized={instrument.data.calibration_curve.realized_coverage}
             />
             <p className="mt-3 text-[11px] text-subtext border-t border-hairline pt-2">
-              The closer the curve hugs the 45-degree line, the more mathematically honest the tool is. Our procedure matches expected real-world accuracy closely.
+              The closer the curve hugs the 45-degree line, the more mathematically honest the tool is: a stated
+              90% interval that actually contains the true value 90% of the time, checked on real held-out patients.
             </p>
           </div>
         )}

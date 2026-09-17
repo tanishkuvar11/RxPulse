@@ -255,7 +255,7 @@ function dotField(slide, seedPoints, color = AMBER, opacity = 88) {
     { num: "01", title: "Data Pipeline (Polars)", desc: "Ingests 116k+ CMS Medicare beneficiaries, maps RxNorm ingredients, computes daily PDC, censors inpatient stays." },
     { num: "02", title: "Archetypes (GMM)", desc: "Unsupervised Gaussian Mixture Models classify refill behavior into 6 profiles: weekend skippers, cost drop-offs, erratic fills." },
     { num: "03", title: "Safe AI Abstention", desc: "Split-Conformal Prediction calculates strict confidence intervals. Abstains when data is sparse, refusing false guesses." },
-    { num: "04", title: "EHR React Engine", desc: "SMART on FHIR design, interactive Visx charts, offline execution, and CarePulse patient mobile companion preview." },
+    { num: "04", title: "EHR React Engine", desc: "Interactive Visx charts, fully offline execution, and an EHR-style concept interface with a patient mobile companion preview (illustrative mockups, not a real EHR integration)." },
   ];
 
   const colW = 2.8, gap = 0.2, startX = 0.7, cardY = 1.7, cardH = 1.95;
@@ -418,19 +418,27 @@ function dotField(slide, seedPoints, color = AMBER, opacity = 88) {
     });
   });
 
-  // Bottom Row: Financial Impact Tile / Graphic Frame
-  const chartPath = path.join(ROOT, "presentation_charts", "slide5_hospital_roi_savings.png");
-  if (fs.existsSync(chartPath)) {
-    // Show chart on left, stat tiles on right
-    s.addImage({ path: chartPath, x: 0.7, y: 5.15, w: 5.8, h: 1.75 });
-    
-    statTile(s, { x: 6.75, y: 5.15, w: 2.85, h: 1.75, value: "$2.4M", label: "Annual Hospital Savings", sub: "Per 10,000 covered lives", valueColor: GREEN });
-    statTile(s, { x: 9.8, y: 5.15, w: 2.8, h: 1.75, value: "4.2x ROI", label: "Health System Return", sub: "Value-based care contract gain", valueColor: AMBER });
-  } else {
-    statTile(s, { x: 0.7, y: 5.15, w: 3.75, h: 1.75, value: "$2.4M", label: "Annual Hospital Savings", sub: "Per 10,000 covered lives in value-based contracts", valueColor: GREEN });
-    statTile(s, { x: 4.77, y: 5.15, w: 3.75, h: 1.75, value: "4.2x ROI", label: "Health System Return", sub: "Reduction in acute readmission penalties", valueColor: AMBER });
-    statTile(s, { x: 8.84, y: 5.15, w: 3.76, h: 1.75, value: "-38%", label: "Avoidable ER Visits", sub: "Prevention of post-surge hypotension toxicity", valueColor: GREEN });
-  }
+  // Bottom row: the business case stated honestly as a hypothesis, not a costed
+  // projection. No dollar/ROI figures here were computed by the pipeline, so none
+  // are shown as if they were -- the earlier chart asset (slide5_hospital_roi_savings.png)
+  // presented invented figures ($330k, $377,000, 7.4x ROI, etc.) with no such basis
+  // and is intentionally not used.
+  s.addShape("roundRect", { x: 0.7, y: 5.15, w: 11.9, h: 1.75, rectRadius: 0.07, fill: { color: SURFACE2 }, line: { color: HAIRLINE, width: 1 } });
+  s.addText("Business case: a hypothesis, not a costed projection", {
+    x: 0.95, y: 5.32, w: 11.4, h: 0.32, isTextBox: true, margin: 0,
+    fontFace: F_HEAD, fontSize: 11.5, color: AMBER, bold: true,
+  });
+  s.addText(
+    "If dose escalations driven by white-coat adherence are avoided, some fraction of preventable ICU admissions "
+    + "and ER readmissions should follow. We have not costed this: no dollar savings or ROI figure in this deck is "
+    + "computed from our pipeline or from real hospital data. Validated so far: on the real CMS cohort the measured "
+    + "lift is +0.0 pp; on injected synthetic data the detector reaches 80% power at a 1.3 pp effect size. Turning "
+    + "that into a hospital P&L case is future work, not a claim made here.",
+    {
+      x: 0.95, y: 5.68, w: 11.4, h: 1.15, isTextBox: true, margin: 0,
+      fontFace: F_BODY, fontSize: 11, color: TEXT, lineSpacing: 15.5,
+    }
+  );
 
   pageNum(s, 5);
 }

@@ -71,7 +71,7 @@ export function MultiSignalTimeline({
             Comparing three everyday health signals: Doctor Visits, Prescription Refills, and Smartwatch Heart Rate.
           </p>
         </div>
-        <ProvenanceTag kind="measured" formula="Encounter & claims from CMS Medicare data; continuous resting heart rate from wearable sensors." />
+        <ProvenanceTag kind="simulated" formula="Doctor visit dates & prescription refills are measured from CMS Medicare claims. CMS DE-SynPUF contains no wearable sensor data; resting heart rate is a physiologically modeled signal, not a real device reading." />
       </div>
 
       {/* Main Interactive Timeline Canvas */}

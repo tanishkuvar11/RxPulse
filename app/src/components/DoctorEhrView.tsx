@@ -84,12 +84,12 @@ ${
     <div className="space-y-6">
       {/* EHR Screen Container */}
       <div className="rounded-xl border border-hairline bg-[#111921] shadow-2xl overflow-hidden font-sans">
-        {/* Top EHR Application Bar (Epic / Cerner style) */}
+        {/* Top EHR application bar -- a generic point-of-care mockup, not modeled on any real vendor's product */}
         <div className="flex flex-wrap items-center justify-between border-b border-hairline bg-[#16212B] px-4 py-2.5 text-xs text-subtext">
           <div className="flex items-center gap-3">
             <span className="flex h-3 w-3 rounded-full bg-emerald-400" title="EHR Server Online" />
             <span className="font-semibold text-text tracking-wide">
-              St. Jude Regional Hospital EHR (Epic Hyperspace CDS)
+              Concept EHR Mockup (illustrative, not a real vendor integration)
             </span>
             <span className="hidden sm:inline text-hairline">|</span>
             <span className="hidden sm:inline text-[11px] text-subtext">Department: Outpatient Cardiology</span>
@@ -357,7 +357,7 @@ ${
                     )}
                   </div>
                   <p className="text-[11px] text-subtext mt-1 leading-relaxed">
-                    Auto-enroll patient in manufacturer copay card ($0 out-of-pocket).
+                    Auto-enroll patient in a manufacturer copay assistance program.
                   </p>
                 </div>
 
@@ -370,13 +370,13 @@ ${
                         : "bg-surface border border-hairline text-text hover:border-amber/60 hover:text-amber"
                     }`}
                   >
-                    {copayDispatched ? "✓ $0 Co-Pay Card Dispatched to Pharmacy" : "📋 Send Pharmacy Co-Pay Aid"}
+                    {copayDispatched ? "✓ Co-Pay Card Dispatched to Pharmacy" : "📋 Send Pharmacy Co-Pay Aid"}
                   </button>
                 </div>
 
                 {copayDispatched && (
                   <div className="rounded border border-amber/30 bg-amber/10 p-2 text-[11px] text-amber mt-1">
-                    Discount card queued. Patient companion app will notify Robert with his $15 coupon code.
+                    Discount card queued. Patient companion app will notify Robert.
                   </div>
                 )}
               </div>
@@ -454,7 +454,7 @@ ${
 
                 {noteInserted && (
                   <div className="rounded border border-emerald-500/30 bg-emerald-950/30 p-2 text-[11px] text-emerald-200 mt-1">
-                    Note appended to encounter #4829104. Fully compliant with hospital audit guidelines.
+                    Note appended to encounter #4829104 (mock record).
                   </div>
                 )}
               </div>

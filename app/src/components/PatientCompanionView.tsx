@@ -43,9 +43,9 @@ export function PatientCompanionView({
       pharmacistReply =
         "Thank you so much for telling me, Robert! Dizziness is common when blood pressure medication is taken on an empty stomach. I just notified Dr. Jenkins to adjust your dosing schedule so you stay safe and comfortable.";
     } else if (reason === "cost") {
-      patientText = "The co-pay was $24.90 this month and I could not afford it.";
+      patientText = "The co-pay was more than I could afford this month.";
       pharmacistReply =
-        "I completely understand, Robert. Nobody should have to choose between their health and their budget. I just activated a $15 co-pay reduction voucher for you, bringing your next refill to under $10.";
+        "I completely understand, Robert. Nobody should have to choose between their health and their budget. I just activated a co-pay assistance voucher for you to bring the cost down.";
     } else {
       patientText = "I was traveling out of state and forgot my bottle at home.";
       pharmacistReply =
@@ -127,10 +127,10 @@ export function PatientCompanionView({
                 <div className="rounded-xl border border-hairline bg-surface p-3 space-y-2">
                   <div className="flex items-center justify-between">
                     <span className="font-semibold text-text text-xs">Pharmacy Co-Pay Voucher</span>
-                    <span className="text-[10px] font-mono text-emerald-400 font-bold">$15 Savings</span>
+                    <span className="text-[10px] font-mono text-emerald-400 font-bold">Concept feature</span>
                   </div>
                   <p className="text-[11px] text-subtext">
-                    Reduce your out-of-pocket pharmacy payment from $24.90 to $9.90 per month.
+                    Reduce your out-of-pocket pharmacy payment this month.
                   </p>
                   <button
                     onClick={() => setCouponClaimed(true)}
@@ -140,7 +140,7 @@ export function PatientCompanionView({
                         : "bg-amber text-ground hover:bg-amber/90"
                     }`}
                   >
-                    {couponClaimed ? "✓ Voucher Claimed (Saved to CVS)" : "Claim $15 Co-Pay Voucher"}
+                    {couponClaimed ? "✓ Voucher Claimed" : "Claim Co-Pay Voucher"}
                   </button>
                 </div>
 
@@ -242,14 +242,14 @@ export function PatientCompanionView({
 
         {/* Right Column: Why This Wins Round 1 & Commercial Viability (6 cols) */}
         <div className="lg:col-span-6 space-y-5">
-          {/* Hackathon Innovation Badge */}
+          {/* Design rationale */}
           <div className="rounded-xl border border-amber/40 bg-surface p-5 space-y-4">
             <div className="flex items-center gap-2 text-xs">
               <span className="flex h-5 w-5 items-center justify-center rounded-full bg-amber text-ground font-bold text-xs">
                 ★
               </span>
               <span className="font-bold uppercase tracking-wider text-text">
-                Hackathon Criterion 8.1: Innovation Beyond Given Requirements
+                Design rationale
               </span>
             </div>
 
@@ -275,48 +275,51 @@ export function PatientCompanionView({
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-400 font-bold">2.</span>
                   <span>
-                    <strong className="text-text">Automated Co-Pay Subsidies:</strong> Over 40% of missed refills are caused by out-of-pocket costs. One-click voucher redemption solves the problem at the source.
+                    <strong className="text-text">Automated co-pay subsidies:</strong> out-of-pocket cost is a well-documented driver of missed refills in published adherence research. One-click voucher redemption addresses it directly.
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-400 font-bold">3.</span>
                   <span>
-                    <strong className="text-text">Frictionless Home Delivery:</strong> By removing the physical burden of pharmacy pickup, patients maintain consistent medication possession rates (MPR over 80%).
+                    <strong className="text-text">Frictionless home delivery:</strong> removing the physical burden of pharmacy pickup is a concept feature aimed at more consistent medication possession, not a measured outcome in this prototype.
                   </span>
                 </li>
               </ul>
             </div>
           </div>
 
-          {/* Business & Health Economics Card */}
+          {/* Business rationale -- a hypothesized model, not a measured outcome */}
           <div className="rounded-xl border border-hairline bg-surface p-5 space-y-3">
             <div className="flex items-center justify-between">
               <h4 className="text-xs font-bold uppercase tracking-wider text-text">
-                Economic Impact & Hospital Feasibility (Criterion 8.2 & 8.4)
+                Hypothesized economic rationale
               </h4>
-              <span className="text-[11px] font-mono text-emerald-400 font-semibold">$3,400 Saved per Patient</span>
+              <span className="text-[11px] font-mono text-subtext font-semibold">Not measured in this prototype</span>
             </div>
 
             <div className="grid grid-cols-2 gap-3 text-xs pt-1">
               <div className="rounded-lg border border-hairline bg-ground p-3">
-                <span className="text-[10px] text-subtext block">Medicare Readmission Penalties</span>
-                <span className="text-base font-bold font-mono text-emerald-400">$0 Penalties</span>
+                <span className="text-[10px] text-subtext block">Readmission risk</span>
+                <span className="text-sm font-bold text-text">Direction: down</span>
                 <p className="text-[10px] text-subtext mt-1">
-                  Prevents emergency room readmissions from accidental medication overdoses.
+                  If dangerous dose escalations are avoided, some ER visits from accidental overdose should be
+                  preventable. No dollar figure is claimed here.
                 </p>
               </div>
 
               <div className="rounded-lg border border-hairline bg-ground p-3">
-                <span className="text-[10px] text-subtext block">Patient Medication Possession</span>
-                <span className="text-base font-bold font-mono text-amber">+38% Refill Rate</span>
+                <span className="text-[10px] text-subtext block">Medication possession</span>
+                <span className="text-sm font-bold text-text">Direction: up</span>
                 <p className="text-[10px] text-subtext mt-1">
-                  Continuous habit formation through empathetic digital support.
+                  Lower-friction refills and delivery are hypothesized to help, based on general adherence
+                  literature, not on data collected by this prototype.
                 </p>
               </div>
             </div>
 
             <p className="text-xs text-subtext pt-2 leading-relaxed">
-              Hospitals pay a monthly per-member SaaS subscription fee to license Vanishing Dose EHR integration. Health insurance plans co-sponsor the cost because preventing one cardiovascular ICU admission saves up to $28,000.
+              A plausible path to hospital adoption is a per-member licensing model, cost-shared with insurers who
+              benefit from fewer preventable admissions. This is a business hypothesis, not a costed estimate.
             </p>
           </div>
         </div>

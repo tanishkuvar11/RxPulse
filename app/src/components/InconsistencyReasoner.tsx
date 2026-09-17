@@ -22,7 +22,7 @@ export function InconsistencyReasoner({
             Connecting pharmacy refill history, smartwatch heart rate patterns, and doctor test results to find the truth.
           </p>
         </div>
-        <ProvenanceTag kind="derived" formula="Multi-signal synthesis across pharmacy claims, smartwatch data, and clinical lab records." />
+        <ProvenanceTag kind="simulated" formula="Reasoning rules applied across measured pharmacy claims and physiologically modeled (not real) wearable/lab signals; the cross-signal narrative itself is illustrative, not a statistical output." />
       </div>
 
       <div className="space-y-4">

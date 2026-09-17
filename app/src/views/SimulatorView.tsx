@@ -97,7 +97,6 @@ export default function SimulatorView() {
   const [restingHeartRate, setRestingHeartRate] = useState<number>(86);
   const [clinicSystolicBp, setClinicSystolicBp] = useState<number>(126);
   const [refillHistoryCount, setRefillHistoryCount] = useState<number>(9);
-  const [showVideoGuide, setShowVideoGuide] = useState<boolean>(true);
 
   // Apply Preset
   const applyPreset = (preset: ScenarioPreset) => {
@@ -128,7 +127,7 @@ export default function SimulatorView() {
         action: "Order objective pharmacy fill verification and review baseline medication schedule before altering prescriptions.",
         talkingPoint: `"How has your experience been picking up your refills at the pharmacy? Have you noticed any problems with transportation or co-pays?"`,
         riskLevel: "withheld",
-        confidence: "Withheld (Margin > ±35%)",
+        confidence: "Illustrative rule, not a statistical estimate",
       };
     }
 
@@ -143,7 +142,7 @@ export default function SimulatorView() {
         action: "DO NOT ESCALATE DOSE. Maintain current dosage strength and discuss refill consistency.",
         talkingPoint: `"Your clinic numbers look controlled today, but taking this medicine regularly every day is what protects your heart. Was there a period recently where it was hard to take it daily?"`,
         riskLevel: "critical",
-        confidence: "94% (Statistically Significant Surge)",
+        confidence: "Illustrative rule, not a statistical estimate",
       };
     }
 
@@ -158,7 +157,7 @@ export default function SimulatorView() {
         action: "SAFE TO ESCALATE. Dose increase or adjuvant therapy is clinically indicated.",
         talkingPoint: `"Your refill history and health metrics show that you have been taking your medication faithfully. Since your blood pressure remains high, let us adjust your dose to get you into the healthy range."`,
         riskLevel: "safe-escalate",
-        confidence: "98% (Adherence Confirmed)",
+        confidence: "Illustrative rule, not a statistical estimate",
       };
     }
 
@@ -173,7 +172,7 @@ export default function SimulatorView() {
         action: "Investigate practical barriers. Screen for adverse side effects or pharmacy co-pay obstacles.",
         talkingPoint: `"Many patients stop this medicine because of side effects or pharmacy costs. Have you noticed any uncomfortable symptoms or trouble getting your refills?"`,
         riskLevel: "barrier",
-        confidence: "91% (Confirmed Gap)",
+        confidence: "Illustrative rule, not a statistical estimate",
       };
     }
 
@@ -187,7 +186,7 @@ export default function SimulatorView() {
       action: "Continue routine monitoring and positive reinforcement.",
       talkingPoint: `"Your refill cadence has been consistent. How are you feeling on this current regimen?"`,
       riskLevel: "low",
-      confidence: "89% (Steady State)",
+      confidence: "Illustrative rule, not a statistical estimate",
     };
   }, [refillHistoryCount, missedGapDays, refilledDaysBeforeVisit, restingHeartRate, clinicSystolicBp]);
 
@@ -222,16 +221,12 @@ export default function SimulatorView() {
             </span>
           </div>
           <p className="mt-1 max-w-3xl text-sm text-subtext leading-relaxed">
-            Test the Vanishing Dose AI engine live. Choose a ready-made clinical scenario or adjust the sliders to watch how the system detects missed pills, evaluates smartwatch telemetry, and prevents dangerous dose escalations.
+            An interactive concept mockup: adjust the sliders or load a scenario to see how the product could
+            surface pharmacy, wearable, and clinic signals together. This page is illustrative, not connected to
+            a real EHR, and its numbers are not statistical output. For the actual analysis on real CMS data, see
+            Cohort, Patient, and Instrument.
           </p>
         </div>
-
-        <button
-          onClick={() => setShowVideoGuide((v) => !v)}
-          className="rounded-lg border border-hairline bg-surface px-3 py-1.5 text-xs text-subtext hover:text-text cursor-pointer"
-        >
-          {showVideoGuide ? "Hide 3-Minute Video Guide" : "Show 3-Minute Video Guide"}
-        </button>
       </section>
 
       {/* View Mode Selector Tabs */}
@@ -264,7 +259,7 @@ export default function SimulatorView() {
                 viewMode === "ehr" ? "bg-ground/40 text-ground" : "bg-hairline text-subtext"
               }`}
             >
-              Epic/Cerner
+              Concept mockup
             </span>
           </button>
 
@@ -299,38 +294,6 @@ export default function SimulatorView() {
       {/* Tab 1: Clinical Sandbox */}
       {viewMode === "sandbox" && (
         <>
-          {/* Video Recording Helper Banner for Hackathon Submission */}
-          {showVideoGuide && (
-            <section className="rounded-xl border border-amber/40 bg-surface/90 p-5 shadow-lg space-y-3">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-amber text-ground text-xs font-bold">
-                    ★
-                  </span>
-                  <h3 className="text-sm font-semibold text-text uppercase tracking-wider">
-                    Hackathon Video Cheat-Sheet (How to Record Your 3-Minute Submission)
-                  </h3>
-                </div>
-                <span className="text-xs font-mono text-amber font-semibold">Rulebook Section 6.3 & 6.4 Compliant</span>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs text-subtext pt-1">
-                <div className="rounded border border-hairline bg-ground/80 p-3">
-                  <strong className="text-text block mb-1">0:00 to 0:45: The Problem</strong>
-                  State Problem ID P01. Explain that when blood pressure stays high, doctors reflexively double the dose, which poisons the patient if the real cause was missed pills.
-                </div>
-                <div className="rounded border border-amber/40 bg-amber/5 p-3">
-                  <strong className="text-amber block mb-1">0:45 to 2:00: Live Demo (This Page!)</strong>
-                  Click the <em>"The White-Coat Surge"</em> preset below on screen. Show the resting heart rate spike and the instant 🚨 <strong>DO NOT ESCALATE DOSE</strong> alert popping up.
-                </div>
-                <div className="rounded border border-hairline bg-ground/80 p-3">
-                  <strong className="text-text block mb-1">2:00 to 3:00: Impact & Business</strong>
-                  Switch to the <strong>Doctor Hospital EHR View</strong> tab above to show one-click orders, then to <strong>Patient Mobile Companion</strong> for copay support. Ensure every team member is visible on camera.
-                </div>
-              </div>
-            </section>
-          )}
-
           {/* Quick Scenario Presets */}
           <section className="space-y-3">
             <div className="flex items-center justify-between text-xs text-subtext">
