@@ -1,0 +1,27 @@
+{
+  "min_encounters": 4,
+  "min_fills": 6,
+  "provenance": "derived",
+  "steps": [
+    {
+      "label": "all beneficiaries in Sample 1",
+      "n": 116352
+    },
+    {
+      "label": "continuously enrolled (Part A+B+D, 12/12 months, every year, no death)",
+      "n": 49691
+    },
+    {
+      "label": "...and >= 4 encounter dates in window",
+      "n": 40372
+    },
+    {
+      "label": "...and >= 1 fill of a target chronic-maintenance ingredient",
+      "n": 39959
+    },
+    {
+      "label": "...and that ingredient has >= 6 fills for them (final cohort, patient-ingredient rows)",
+      "n": 6286
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+data/raw/
+data/processed/
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+app/dist/
+app/node_modules/
+.DS_Store
+*.log

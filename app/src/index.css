@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background: #0E1419;
+  color: #E8EDF0;
+  font-feature-settings: "tnum" 1;
+}
+
+/* Numeric/tabular content: figures, dates, offsets, intervals always align on mono. */
+.tabular {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+::selection {
+  background: rgba(217, 164, 65, 0.35);
+}
+
+/* hatching for censored / abstained regions -- never a color that implies a finding */
+.hatch-censored {
+  background-image: repeating-linear-gradient(
+    45deg,
+    #3A4854,
+    #3A4854 3px,
+    transparent 3px,
+    transparent 7px
+  );
+}

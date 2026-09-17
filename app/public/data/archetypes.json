@@ -1,0 +1,95 @@
+{
+  "clusters": [
+    {
+      "centroid": {
+        "cv_inter_fill_interval": 0.8131325697548459,
+        "day_of_week_effect": 0.006389904623156882,
+        "gap_skew": 0.8404178531228302,
+        "linear_trend": -7.005854442292312e-05,
+        "longest_gap": 324.81934306569343,
+        "n_gaps_ge7": 6.131386861313868,
+        "pdc": 0.2915715620698629,
+        "pre_appointment_lift": 0.012622018691199218
+      },
+      "cluster": 0,
+      "label": "high overall coverage",
+      "n": 548
+    },
+    {
+      "centroid": {
+        "cv_inter_fill_interval": 0.7524130335886876,
+        "day_of_week_effect": 0.005923383308177077,
+        "gap_skew": 0.557432325391954,
+        "linear_trend": -7.907314220124017e-05,
+        "longest_gap": 245.8843252305113,
+        "n_gaps_ge7": 7.3520536462699075,
+        "pdc": 0.2776463532733929,
+        "pre_appointment_lift": 0.001263355689327508
+      },
+      "cluster": 1,
+      "label": "no long gap, frequent week-plus gaps",
+      "n": 1193
+    },
+    {
+      "centroid": {
+        "cv_inter_fill_interval": 0.7362966655084967,
+        "day_of_week_effect": 0.005704543839100081,
+        "gap_skew": 1.3426611914289794,
+        "linear_trend": -0.0004331115931156514,
+        "longest_gap": 459.39748953974896,
+        "n_gaps_ge7": 5.656903765690377,
+        "pdc": 0.23296058400044833,
+        "pre_appointment_lift": -0.0106259244827525
+      },
+      "cluster": 2,
+      "label": "one long gap, declining over time",
+      "n": 717
+    },
+    {
+      "centroid": {
+        "cv_inter_fill_interval": 1.0143758097060311,
+        "day_of_week_effect": 0.005342672107415375,
+        "gap_skew": 0.8394612571701506,
+        "linear_trend": 0.00018293941710533767,
+        "longest_gap": 409.4045881126173,
+        "n_gaps_ge7": 5.181438998957247,
+        "pdc": 0.25130577947351557,
+        "pre_appointment_lift": 0.0030696298128446804
+      },
+      "cluster": 3,
+      "label": "irregular refill timing, one long gap",
+      "n": 959
+    },
+    {
+      "centroid": {
+        "cv_inter_fill_interval": 0.808486027001678,
+        "day_of_week_effect": 0.0069474721052369725,
+        "gap_skew": 0.6998528318298515,
+        "linear_trend": -4.664840872473233e-05,
+        "longest_gap": 333.3544450900639,
+        "n_gaps_ge7": 6.348053457292272,
+        "pdc": 0.19738863644963406,
+        "pre_appointment_lift": 0.0018989007575570683
+      },
+      "cluster": 4,
+      "label": "low overall coverage",
+      "n": 1721
+    },
+    {
+      "centroid": {
+        "cv_inter_fill_interval": 0.6659920908703699,
+        "day_of_week_effect": 0.005727349762311618,
+        "gap_skew": 0.15000147599028663,
+        "linear_trend": 7.580229909509773e-06,
+        "longest_gap": 257.7404181184669,
+        "n_gaps_ge7": 6.121951219512195,
+        "pdc": 0.20823163978311005,
+        "pre_appointment_lift": -0.005888903835520603
+      },
+      "cluster": 5,
+      "label": "gaps spread evenly, no long gap",
+      "n": 1148
+    }
+  ],
+  "provenance": "derived"
+}

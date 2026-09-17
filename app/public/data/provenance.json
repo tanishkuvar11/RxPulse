@@ -1,0 +1,5 @@
+{
+  "derived": "Value is computed by this pipeline from measured data. Hover for the formula.",
+  "measured": "Value comes from a CMS DE-SynPUF file, downloaded once and read without modification.",
+  "simulated": "Value comes from the validation harness (synthetic, injected-effect data), never from the real cohort. Shown only on the Instrument screen."
+}

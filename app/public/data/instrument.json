@@ -1,0 +1,173 @@
+{
+  "calibration_curve": {
+    "n_val": [
+      3143,
+      3143,
+      3143,
+      3143,
+      3143,
+      3143,
+      3143,
+      3143,
+      3143,
+      3143
+    ],
+    "nominal_coverage": [
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95
+    ],
+    "provenance": "derived",
+    "realized_coverage": [
+      0.4922048997772829,
+      0.5453388482341712,
+      0.6064269805917912,
+      0.6573337575564747,
+      0.7063315303849825,
+      0.7540566337893733,
+      0.8094177537384665,
+      0.8593700286350621,
+      0.9086859688195991,
+      0.9576837416481069
+    ]
+  },
+  "power_curve": {
+    "provenance": "simulated",
+    "rows": [
+      {
+        "mean_observed_lift": -0.0016854161191599936,
+        "n_replicates": 40,
+        "noise_sd": 0.1,
+        "power": 0.1,
+        "true_effect_size": 0.0
+      },
+      {
+        "mean_observed_lift": 0.0064989697970557455,
+        "n_replicates": 40,
+        "noise_sd": 0.1,
+        "power": 0.475,
+        "true_effect_size": 0.0062
+      },
+      {
+        "mean_observed_lift": 0.013124825573093921,
+        "n_replicates": 40,
+        "noise_sd": 0.1,
+        "power": 0.9,
+        "true_effect_size": 0.0125
+      },
+      {
+        "mean_observed_lift": 0.019321766149315144,
+        "n_replicates": 40,
+        "noise_sd": 0.1,
+        "power": 1.0,
+        "true_effect_size": 0.0188
+      },
+      {
+        "mean_observed_lift": 0.02510772681421803,
+        "n_replicates": 40,
+        "noise_sd": 0.1,
+        "power": 1.0,
+        "true_effect_size": 0.025
+      },
+      {
+        "mean_observed_lift": 0.03213991364875109,
+        "n_replicates": 40,
+        "noise_sd": 0.1,
+        "power": 1.0,
+        "true_effect_size": 0.0312
+      },
+      {
+        "mean_observed_lift": 0.03888571288903464,
+        "n_replicates": 40,
+        "noise_sd": 0.1,
+        "power": 1.0,
+        "true_effect_size": 0.0375
+      },
+      {
+        "mean_observed_lift": 0.04389324212789825,
+        "n_replicates": 40,
+        "noise_sd": 0.1,
+        "power": 1.0,
+        "true_effect_size": 0.0438
+      },
+      {
+        "mean_observed_lift": 0.05046421897295755,
+        "n_replicates": 40,
+        "noise_sd": 0.1,
+        "power": 1.0,
+        "true_effect_size": 0.05
+      },
+      {
+        "mean_observed_lift": 3.909024062621613e-05,
+        "n_replicates": 40,
+        "noise_sd": 0.25,
+        "power": 0.2,
+        "true_effect_size": 0.0
+      },
+      {
+        "mean_observed_lift": 0.0058007043893785835,
+        "n_replicates": 40,
+        "noise_sd": 0.25,
+        "power": 0.375,
+        "true_effect_size": 0.0062
+      },
+      {
+        "mean_observed_lift": 0.013073078964289322,
+        "n_replicates": 40,
+        "noise_sd": 0.25,
+        "power": 1.0,
+        "true_effect_size": 0.0125
+      },
+      {
+        "mean_observed_lift": 0.019626617703934958,
+        "n_replicates": 40,
+        "noise_sd": 0.25,
+        "power": 1.0,
+        "true_effect_size": 0.0188
+      },
+      {
+        "mean_observed_lift": 0.025059097651264572,
+        "n_replicates": 40,
+        "noise_sd": 0.25,
+        "power": 1.0,
+        "true_effect_size": 0.025
+      },
+      {
+        "mean_observed_lift": 0.031506448060322746,
+        "n_replicates": 40,
+        "noise_sd": 0.25,
+        "power": 1.0,
+        "true_effect_size": 0.0312
+      },
+      {
+        "mean_observed_lift": 0.037440265288536,
+        "n_replicates": 40,
+        "noise_sd": 0.25,
+        "power": 1.0,
+        "true_effect_size": 0.0375
+      },
+      {
+        "mean_observed_lift": 0.04315506440304625,
+        "n_replicates": 40,
+        "noise_sd": 0.25,
+        "power": 1.0,
+        "true_effect_size": 0.0438
+      },
+      {
+        "mean_observed_lift": 0.049328367696871336,
+        "n_replicates": 40,
+        "noise_sd": 0.25,
+        "power": 1.0,
+        "true_effect_size": 0.05
+      }
+    ]
+  },
+  "provenance_note": "Power curve is simulated (validation harness, injected effect). Calibration curve is derived from the real cohort's held-out split."
+}
