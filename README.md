@@ -1,4 +1,4 @@
-# Vanishing Dose: Multi-Signal Clinical Evidence Instrument
+# RxPulse: Multi-Signal Clinical Evidence Instrument
 
 > Built for **Manipal Hackathon 2026 (M# 2026)**
 > **Track:** Healthcare (Good Health and Well-being)
@@ -99,8 +99,8 @@ Unsupervised Gaussian Mixture Models classify refill behaviors into 6 clinical p
 
 ```bash
 # Clone repository
-git clone https://github.com/tanishkuvar11/Vanishing-Dose.git
-cd Vanishing-Dose/app
+git clone https://github.com/tanishkuvar11/RxPulse.git
+cd RxPulse/app
 
 # Install dependencies
 npm install
