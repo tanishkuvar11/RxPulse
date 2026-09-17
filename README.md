@@ -57,10 +57,28 @@ The system avoids punitive diagnostic labels. Instead of declaring a patient "no
 * **"DO NOT ESCALATE DOSE: Pre-Visit Surge Detected"**
 * Provides **Doctor Conversation Tips** that encourage exploring practical obstacles (e.g. co-pay costs, pharmacy transport, or side effects) in a supportive manner.
 
-### B. Safe AI Abstention (Split-Conformal Prediction)
+### B. Doctor Hospital EHR View (Point-of-Care Screen)
+Simulates an Epic/Cerner hospital EHR consultation interface:
+* Patient demographic banner (Robert Miller, 68M, resistant hypertension).
+* Live vitals comparison (in-clinic blood pressure vs 30-day smartwatch resting pulse).
+* Prominent Vanishing Dose CDS alert.
+* **One-Click Clinical Order Center**:
+  1. *Maintain Dose (Decline Escalation):* Defers dosage increase, preventing outpatient toxicity.
+  2. *Send Co-Pay Assistance Referral:* Auto-enrolls patient into manufacturer $0 co-pay card.
+  3. *Order Smart Pill Dispenser:* Ships Bluetooth-enabled cap to eliminate future unmonitored lapses.
+  4. *Auto-Generate Clinical Chart Note:* Inserts complete non-accusatory progress note into hospital record with one-click copy.
+
+### C. Patient Mobile Companion (CarePulse App)
+A smartphone preview demonstrating how Vanishing Dose replaces patient blame with supportive friction relief:
+* Gentle, non-stigmatizing check-in notification.
+* One-click $15 co-pay reduction voucher claim.
+* Free 2-day doorstep pharmacy delivery request.
+* Interactive confidential pharmacist chat with instant responses for common side effects (dizziness, cost, travel).
+
+### D. Safe AI Abstention (Split-Conformal Prediction)
 When a patient has sparse refill history (only 2 to 3 fills), the margin of error is too wide to make a safe determination. Rather than hallucinating an inaccurate guess, the system safely **withholds the prediction** and flags the need for more baseline records.
 
-### C. Adherence Archetypes (GMM Clustering)
+### E. Adherence Archetypes (GMM Clustering)
 Unsupervised Gaussian Mixture Models classify refill behaviors into 6 clinical profiles:
 1. High overall coverage
 2. Frequent week-plus gaps (weekend skippers)
@@ -145,6 +163,8 @@ Vanishing-Dose/
     public/data/          Exported JSON data files
     src/
       components/
+        DoctorEhrView.tsx           Simulated Epic/Cerner EHR Point-of-Care view
+        PatientCompanionView.tsx    CarePulse patient mobile companion screen
         ClinicalActionBanner.tsx    Clinician guidance & conversation tips
         MultiSignalTimeline.tsx     Synchronized 3-layer timeline visualizer
         InconsistencyReasoner.tsx   Cross-signal analysis cards
@@ -155,6 +175,7 @@ Vanishing-Dose/
         ArchetypeCards.tsx          GMM behavioral archetype profiles
       views/
         Hero.tsx                    Interactive introduction & 30-second dilemma
+        SimulatorView.tsx           Live Interactive Diagnostic Sandbox & Demo
         CohortView.tsx              6,286 patient Medicare analysis & benchmark
         PatientView.tsx             Individual patient dossiers & telemetry
         InstrumentView.tsx          Statistical accuracy & calibration testing
