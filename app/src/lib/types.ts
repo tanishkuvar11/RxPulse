@@ -78,6 +78,47 @@ export interface ConformalInfo {
   interval_hi: number;
   abstain: boolean;
 }
+export interface VitalsEntry {
+  date: string;
+  systolic_bp?: number;
+  diastolic_bp?: number;
+  heart_rate?: number;
+  lab_name?: string;
+  lab_value?: number | string;
+  lab_unit?: string;
+  doctor_notes?: string;
+}
+
+export interface WearableDay {
+  date: string;
+  resting_heart_rate: number;
+  step_count: number;
+  sleep_hours?: number;
+  is_gap_day: boolean;
+}
+
+export interface PrescriptionEvent {
+  date: string;
+  action: string;
+  details: string;
+  dose: string;
+}
+
+export interface InconsistencySignal {
+  title: string;
+  level: "critical" | "warning" | "info";
+  claims_evidence: string;
+  physio_evidence: string;
+  synthesis: string;
+}
+
+export interface ClinicalAction {
+  recommendation: string;
+  action_type: "escalation_danger" | "barrier_check" | "stable_monitoring" | "withheld_investigation";
+  alert_badge: string;
+  talking_point: string;
+}
+
 export interface Patient {
   id: string;
   desynpuf_id: string;
@@ -92,6 +133,12 @@ export interface Patient {
   coverage_dates: string[];
   coverage_status: number[]; // 0 uncovered, 1 covered, 2 censored
   encounter_dates: string[];
+  vitals?: VitalsEntry[];
+  wearables?: WearableDay[];
+  prescription_events?: PrescriptionEvent[];
+  inconsistency_signals?: InconsistencySignal[];
+  clinical_action?: ClinicalAction;
+  risk_level?: "high" | "moderate" | "low" | "withheld";
 }
 export interface PatientsData {
   provenance: Provenance;
